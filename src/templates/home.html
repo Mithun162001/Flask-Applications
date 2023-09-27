@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-image: url('/static/HPE_Wallpapers_2022_4K_3440x1440px_11.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: 70% center; 
+            display: flex;
+            flex-direction: column;
+            
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="logo">
+            <img src="{{ url_for('static', filename='hpe_logo.png') }}" alt="HPE Logo">
+        </div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="about">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </aside>
+
+    <main class="content">
+        <header class="header">
+            <h1>Remote Server File Upload Application</h1>
+        </header>
+        <section class="main-content">
+            <!-- Add your main content here -->
+            <h1>Welcome to the Remote Server File Upload Application</h1><br>
+            <p>This application allows you to securely upload files to a remote server using the SCP (Secure Copy Protocol) method.</p><br><br>
+    <p><u>Follow the instructions below:</u></p><br>
+    <ol>
+      <li>    Enter the IP address of the remote server below and click "Connect."</li><br>
+        <li>    Enter your username and password to authenticate.</li><br>
+        <li>    Click the "Upload File" button to transfer a file to the remote server.</li><br>
+    </ol>
+    <form method="POST" action="/connect">
+        <label for="ip_address">Enter IP Address:</label>
+        <input type="text" id="ip_address" name="ip_address" required>
+        <input type="submit" value="Connect">
+    </form>
+        </section>
+    </main>
+</body>
+</html>
+
+

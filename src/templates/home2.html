@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>File Upload and SSH</title>
+</head>
+<body>
+    <h1>File Upload and SSH</h1>
+
+    <form method="POST" enctype="multipart/form-data">
+        <label for="ip_address">IP Address:</label>
+        <input type="text" id="ip_address" name="ip_address" required><br><br>
+
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <label for="file">Choose a File:</label>
+        <input type="file" id="file" name="file" accept=".txt,.pdf,.docx" required><br><br>
+
+        <input type="submit" value="Upload and Send File">
+    </form>
+</body>
+</html>

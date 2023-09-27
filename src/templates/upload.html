@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload File to Remote Server</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-image: url('/static/HPE_Wallpapers_2022_4K_3440x1440px_11.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: 70% center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <aside class="sidebar">
+        <!-- Sidebar content -->
+        <div class="logo">
+            <img src="{{ url_for('static', filename='hpe_logo.png') }}" alt="HPE Logo">
+        </div>
+        <ul>
+            <li><a href="home">Home</a></li>
+            <li><a href="about">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </aside>
+    <main class="content">
+    <header class="header">
+        <h1>Upload File to Remote Server</h1><br>
+    </header>
+
+    <section class="main-content">
+    <form method="POST" action="/upload" enctype="multipart/form-data">
+       
+        <input type="hidden" name="ip_address" value="{{ ip_address }}">
+        <input type="hidden" name="username" value="{{ username }}">
+        <input type="hidden" name="password" value="{{ password }}">
+        <label for="file">Select a file to upload:</label>
+        <input type="file" id="file" name="file" required><br>
+        
+        <input type="submit" value="Upload File">
+    </form>
+    <br>
+    <a href="/">Back to Home</a>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class="flashes">
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+    </section>
+</body>
+</html>
